@@ -9,7 +9,7 @@
     <div class="alert alert-success">@ViewBag.SuccessMessage</div>
 }
 <div style="margin-bottom: 20px;" class="text-right">
-    <a href="@Url.Action("AddEdit", "Customers")" class="btn btn-primary">New Customer</a>
+    <a href="@Url.Action("AddEdit", "Customers", new { Pagename= "Customer"})" class="btn btn-primary">New Customer</a>
 </div>
 
 <table class="table table-bordered">
