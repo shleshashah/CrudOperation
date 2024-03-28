@@ -1,0 +1,44 @@
+﻿@model List<Customer>
+@{
+    ViewData["Title"] = "Customer List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+<div style="margin-bottom: 20px;" class="text-right">
+    <a href="@Url.Action("AddEdit", "Customers")" class="btn btn-primary">New Customer</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Username</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vCus in Model)
+        {
+            <tr>
+                <td class="text-center">@vCus.Id</td>
+                <td class="text-center">@vCus.FirstName</td>
+                <td class="text-center">@vCus.LastName</td>
+                <td class="text-center">@vCus.LoginUser</td>
+                <td class="text-center">
+                    @Html.ActionLink("Edit", "AddEdit", "Customers", new { id = vCus.Id }, new { @class = "btn btn-primary" })
+                    <form asp-action="DeleteConfirmed" asp-controller="Customers" method="post" onsubmit="return confirm('Are you sure you want to delete this?');">
+                        <input type="hidden" name="id" value="@vCus.Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
