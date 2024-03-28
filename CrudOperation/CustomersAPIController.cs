@@ -3,6 +3,7 @@ using CrudOperation.Models;
 using CrudOperation.Utility;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,11 @@ namespace CrudOperation
     public class CustomersAPIController : ControllerBase
     {
         private readonly ICustomer _Customer;
-        public CustomersAPIController(ICustomer customers)
+        private readonly ILogger<CustomersAPIController> _logger;
+        public CustomersAPIController(ICustomer customers, ILogger<CustomersAPIController> logger)
         {
             _Customer = customers;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -26,6 +29,7 @@ namespace CrudOperation
             ResponseHelper objHelper = new ResponseHelper();
             try
             {
+                _logger.LogInformation("GET request received");
                 List<Customer> vCustomer = await _Customer.getall();
                 objHelper.Status = StatusCodes.Status200OK;
                 objHelper.Message = ErrrorMessageEnum.GetSuccessfully;
@@ -35,6 +39,7 @@ namespace CrudOperation
             }
             catch (Exception ex)
             {
+                _logger.LogError("GetALL Error: " + ex.Message);
                 objHelper.Status = SystemExceptions.InternalExcep(Convert.ToInt16(ex.Data["ErrorCode"]));
                 objHelper.Message = ex.Message;
                 return StatusCode(objHelper.Status, objHelper);
@@ -56,28 +61,12 @@ namespace CrudOperation
             }
             catch (Exception ex)
             {
+                _logger.LogError("Get Error: " + ex.Message);
                 objHelper.Status = SystemExceptions.InternalExcep(Convert.ToInt16(ex.Data["ErrorCode"]));
                 objHelper.Message = ex.Message;
                 return StatusCode(objHelper.Status, objHelper);
             }
         }
-
-        //[HttpPost]
-        //public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
-        //{
-        //    try
-        //    {
-        //        _context.Customers.Add(customer);
-        //        await _context.SaveChangesAsync();
-
-        //        return CreatedAtAction("GetCustomer", new { id = customer.Id }, customer);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Log the exception
-        //        return StatusCode(500, "Internal server error");
-        //    }
-        //}
 
         [HttpPost]
         public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
@@ -94,6 +83,7 @@ namespace CrudOperation
             }
             catch (Exception ex)
             {
+                _logger.LogError("Add Error: " + ex.Message);
                 objHelper.Status = SystemExceptions.InternalExcep(Convert.ToInt16(ex.Data["ErrorCode"]));
                 objHelper.Message = ex.Message;
                 return StatusCode(objHelper.Status, objHelper);
@@ -115,6 +105,7 @@ namespace CrudOperation
             }
             catch (Exception ex)
             {
+                _logger.LogError("Edit Error: " + ex.Message);
                 objHelper.Status = SystemExceptions.InternalExcep(Convert.ToInt16(ex.Data["ErrorCode"]));
                 objHelper.Message = ex.Message;
                 return StatusCode(objHelper.Status, objHelper);
@@ -136,6 +127,7 @@ namespace CrudOperation
             }
             catch (Exception ex)
             {
+                _logger.LogError("Delete Error: " + ex.Message);
                 objHelper.Status = SystemExceptions.InternalExcep(Convert.ToInt16(ex.Data["ErrorCode"]));
                 objHelper.Message = ex.Message;
                 return StatusCode(objHelper.Status, objHelper);
