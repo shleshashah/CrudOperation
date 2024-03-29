@@ -14,6 +14,7 @@ namespace CrudOperation.Interface
         Task<Customer> ValidateUser(string username, string Password);
         Task<int> GetId(string username);
         Task<string> UpdatePassword(ChangePasswordPayload changePasswordPayload);
+        Task AddToken(int Id, string token);
 
     }
 }

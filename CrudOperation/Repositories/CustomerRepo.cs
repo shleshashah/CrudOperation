@@ -206,5 +206,28 @@ namespace CrudOperation.Repositories
             }
         }
 
+        public async Task AddToken(int Id, string token)
+        {
+            try
+            {
+                var vCustomer = _adbContext.Customers.Where(w => w.Id == Id).FirstOrDefault();
+                if (vCustomer != null)
+                {
+                    vCustomer.Token = token;
+                    _adbContext.Update(vCustomer);
+                    await Task.FromResult(_adbContext.SaveChanges());
+
+                }
+                else
+                {
+                    throw new SystemExceptions(ErrrorMessageEnum.DataNotFound, StatusCodes.Status204NoContent);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

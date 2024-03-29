@@ -1,6 +1,7 @@
 ﻿using CrudOperation.Interface;
 using CrudOperation.Models;
 using CrudOperation.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrudOperation.Controllers
 {
+    [TokenAuthentication]
     public class CustomersController : Controller
     {
         private readonly ICustomer _Customer;
@@ -17,6 +19,8 @@ namespace CrudOperation.Controllers
             _Customer = customers;
             _emailServices = emailServices;
         }
+
+
         public async Task<IActionResult> Index()
         {
             List<Customer> vCustomer = new List<Customer>();
@@ -33,6 +37,7 @@ namespace CrudOperation.Controllers
             return View(vCustomer);
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> AddEdit(int id = 0, string Pagename = null)
         {
             Customer vCustomer = new Customer();
@@ -50,6 +55,7 @@ namespace CrudOperation.Controllers
             return View(vCustomer);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddEdit(Customer customer)

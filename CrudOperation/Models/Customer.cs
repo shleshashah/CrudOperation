@@ -33,5 +33,6 @@ namespace CrudOperation.Models
         public bool IsDeleted { get; set; }
         public DateTime AddedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public string Token { get; set; }
     }
 }

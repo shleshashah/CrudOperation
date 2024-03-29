@@ -1,0 +1,33 @@
+[3/29/2024 12:25:13 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 12:25:13 AM] [Information] Hosting environment: Development
+[3/29/2024 12:25:14 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 12:25:49 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 12:25:49 AM] [Information] Hosting environment: Development
+[3/29/2024 12:25:49 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 12:31:09 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 12:31:09 AM] [Information] Hosting environment: Development
+[3/29/2024 12:31:09 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 12:58:04 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 12:58:04 AM] [Information] Hosting environment: Development
+[3/29/2024 12:58:04 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 1:05:45 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 1:05:45 AM] [Information] Hosting environment: Development
+[3/29/2024 1:05:45 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 1:11:47 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 1:11:47 AM] [Information] Hosting environment: Development
+[3/29/2024 1:11:47 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 1:13:28 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 1:13:28 AM] [Information] Hosting environment: Development
+[3/29/2024 1:13:28 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 1:17:43 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 1:17:43 AM] [Information] Hosting environment: Development
+[3/29/2024 1:17:43 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 2:15:35 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 2:15:35 AM] [Information] Hosting environment: Development
+[3/29/2024 2:15:35 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 2:19:01 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 2:19:01 AM] [Information] Hosting environment: Development
+[3/29/2024 2:19:01 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
+[3/29/2024 3:37:34 AM] [Information] Application started. Press Ctrl+C to shut down.
+[3/29/2024 3:37:34 AM] [Information] Hosting environment: Development
+[3/29/2024 3:37:34 AM] [Information] Content root path: E:\Shlesha\Demo\CrudOperation
